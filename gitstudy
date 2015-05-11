@@ -13,3 +13,5 @@ git push origin master
 ssh-keygen
 cat  //display the content
 
+git log 
+
