@@ -16,3 +16,6 @@ cat  //display the content
 git log //display the push status
 
 ssh-add  //add the key
+
+git checkout master
+git merge --no-ff yanchuang
