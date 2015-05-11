@@ -14,3 +14,5 @@ ssh-keygen
 cat  //display the content
 
 git log //display the push status
+
+ssh-add  //add the key
