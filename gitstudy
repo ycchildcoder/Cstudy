@@ -1,0 +1,15 @@
+git config --global user.name input
+git config --global user.email xiajun@sbada.com
+git config --global core.autocrlf true
+git config --global core.safecrlf true
+git status
+git branch -a
+git checkout -b yanchuang remotes/origin/master  //switch branch
+git commit -a -m"[feature] Add "
+git branch -D yanchuang //deleat branch 
+git push origin master
+
+
+ssh-keygen
+cat  //display the content
+
