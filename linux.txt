@@ -43,4 +43,14 @@ p：粘贴复制的内容在光标所在的行
 G：光标移动到文件尾
 gg：光标移动到文件开头
 
+gcc编译
+gcc -c 只执行到预编译。
+gcc file.c生成a.out
+gcc file.c -o file 生成file
+编译多个文件
+gcc -c message.c生成message.o 的文件，其包含连接到一个较大程序的已编译目标代码
+gcc -c main.c生成main.c的文件
+gcc -o goodbye message.o main.o生成可执行文件goodbye
+直接用这个命令gcc -o goodbye1 message.c main.c
+
 
