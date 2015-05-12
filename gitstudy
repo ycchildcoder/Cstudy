@@ -19,3 +19,7 @@ ssh-add  //add the key
 
 git checkout master
 git merge --no-ff yanchuang
+
+git reset --soft 
+git reset --hard
+
