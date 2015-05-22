@@ -1,0 +1,68 @@
+shell command
+#!/bin/sh //头
+chmod +x filename //使执行
+./filename
+在编程语言中使用变量，shell中所有的变量都是由字符串组成的。
+不需要对变量进行声明，取出变量值要加一个美元符号$在变量前面
+#!/bin/sh
+a="hello world";
+echo "A is";
+echo $a;
+echo "This is $numnd";不会打印This is 2nd
+echo "this is ${num}nd";
+数字表达式：expr,let
+ls -l | wc -l //计算文件数
+wc -l file //文件行数
+wc -w file //文件单词数
+wc -c file //文件字符数
+grep "pattern" file //在文件中搜素字符串
+read var //提示用户输入，将输入赋值给变量
+>//写入文件并覆盖文件
+>>写入文件保留旧文件
+if ...;then
+...
+elif ...;then
+...
+else
+...
+fi //结束
+
+case $num in
+1)echo 1;;
+2)echo 2;;
+*)echo 10;;
+esac
+
+select var in ...;do
+break;
+done
+
+select var in "begin" "end" "exit"
+  break;
+done
+
+shell 逻辑运算符
+=
+!= 应用于整形和字符串  []只能是字符串
+>
+< //应用于整形，[]表示字符串
+
+-eq 等于，整形比较
+-ne 不等于
+-lt 小于
+-gt 大于
+-le 小于或等于
+-ge 大于或等于
+-a 双方都成立，and
+-o 单方成立，or
+
+test command
+[  ]
+[[  ]]
+在[]中，><需要加转义字符，表示字符串大小比较。不支持<>，也不支持|| && 需要用-a -o表示
+[[ ]]是[]的补充，能够支持<>不需要转义符，还是表示字符串比较，也支持|| && 
+
+for 变量 in 列表；do
+操作
+done
+ 
