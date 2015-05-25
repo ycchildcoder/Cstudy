@@ -13,9 +13,9 @@ PRIMARY KEY(ID)
 describe tb_book;
 insert into tb_book values ("12","c++","yanchuang","beijing");
 drop table tb_book;
-delete form tb_book;//清空表
-delete form ta_book where id=12;//删除表中一行
-delete form tb_book where id in (‘102’，‘103’)；
+delete from tb_book;//清空表
+delete from ta_book where id=12;//删除表中一行
+delete from tb_book where id in (‘102’，‘103’)；
 update tb_book set bookname="c progrom" where id='12';
 cmd:
 net start mysql //启动mysql服务

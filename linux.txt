@@ -53,4 +53,21 @@ gcc -c main.c生成main.c的文件
 gcc -o goodbye message.o main.o生成可执行文件goodbye
 直接用这个命令gcc -o goodbye1 message.c main.c
 
+makefile一般结构
+target...:dependency...
+  command...
+1、target，一个目标文件，可以是object，也可是执行文件。还可以是标签label
+2、dependency，依赖，要生成目标文件target所依赖哪些文件
+3、command命令，创建目标时，需要运行的shell命令（每行的缩进必须要tab而不能使用多个空格）
+如果依赖文件中有一个比目标文件要新的话，shell命令所定义的命令就会被执行
+#this makefile just is aexample.
+test.o:test.c test.h
+	gcc -c test.c
+	
+test.o:test.c test.h
+	gcc -c test.c
+clean:
+	rm -f *.o
+
+
 
