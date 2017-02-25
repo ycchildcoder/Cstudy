@@ -1,65 +1,65 @@
-root�û���¼sudo -s
-��ʾĿ¼����ls
-ls -l��ʾ��ǰĿ¼�����ļ�����ϸ��Ϣ
-cd �ı乤��Ŀ¼
-mkdir����Ŀ¼
-rmdirɾ��Ŀ¼����
-touch�����ļ�������ļ����޸�����
-gedit�༭�ļ�
-cat��������ʾ�ļ�����
-cp�ļ���Ŀ¼����
-mv�����ƶ��ļ��͸����ļ�
-rmɾ���ļ���Ŀ¼ rm -rf
-pwd������ʾ�û���ǰ���ڵ�Ŀ¼
-tar��ѹ������
-chown���ڸı��ļ�����Ŀ¼�ķ���Ȩ�ޡ��ɶ�r����дw����ִ��x�����ֲ�ͬ���͵��û����ļ����ʣ��ļ�������u��ͬ���û�g�������û�o
-  r=4��w=2��x=1
-��Ҫrwx������4+2+1=7
+root用户登录sudo -s
+显示目录内容ls
+ls -l显示当前目录所有文件的详细信息
+cd 改变工作目录
+mkdir创建目录
+rmdir删除目录命令
+touch建立文件或更新文件的修改日期
+gedit编辑文件
+cat创建和显示文件内容
+cp文件或目录复制
+mv用于移动文件和更名文件
+rm删除文件或目录 rm -rf
+pwd用于显示用户当前所在的目录
+tar解压缩命令
+chown用于改变文件或者目录的访问权限。可读r，可写w，可执行x。三种不同类型的用户对文件访问：文件所有者u，同组用户g，其他用户o
+  r=4，w=2，x=1
+若要rwx属性则4+2+1=7
 rw-                6
 r-x                5
-shutdown�˳�ϵͳ
-passwd�޸��û�����passwd �û���
-su �ı��û�Ȩ��
-who �鿴��ǰ�����û�
-ps �鿴����  ps-x�鿴�Լ���
-kill��ֹ��̨���� kill -9 
+shutdown退出系统
+passwd修改用户口令passwd 用户名
+su 改变用户权限
+who 查看当前在线用户
+ps 查看进程  ps-x查看自己的
+kill终止后台进程 kill -9 
 
-�˳�vim
-:q! �뿪vim�������ղű༭������
-:wq ���̲��˳�
-:set nu ��ʾ�к�
-:set nonuȡ���к�
+退出vim
+:q! 离开vim，放弃刚才编辑的内容
+:wq 存盘并退出
+:set nu 显示行号
+:set nonu取消行号
 
-������ģʽ��
-x��ɾ��������ַ�
-X��ɾ�����ǰ���ַ�
-dd��ɾ����ǰ��
-u���ָ��ղű��޸ĵ��ı�
-/name ���ҹ�����Ϊname���ַ���
-s: ɾ�����ڵ��ַ���ͬʱ��������ģʽ
-yy���Ƶ�ǰ������ڵ���
-p��ճ�����Ƶ������ڹ�����ڵ���
+在命令模式下
+x：删除光标后的字符
+X：删除光标前的字符
+dd：删除当前行
+u：恢复刚才被修改的文本
+/name 查找光标后名为name的字符串
+s: 删除所在的字符，同时进入输入模式
+yy复制当前光标所在的行
+p：粘贴复制的内容在光标所在的行
 
-G������ƶ����ļ�β
-gg������ƶ����ļ���ͷ
+G：光标移动到文件尾
+gg：光标移动到文件开头
 
-gcc����
-gcc -c ִֻ�е�Ԥ���롣
-gcc file.c����a.out
-gcc file.c -o file ����file
-�������ļ�
-gcc -c message.c����message.o ���ļ�����������ӵ�һ���ϴ������ѱ���Ŀ�����
-gcc -c main.c����main.c���ļ�
-gcc -o goodbye message.o main.o���ɿ�ִ���ļ�goodbye
-ֱ�����������gcc -o goodbye1 message.c main.c
+gcc编译
+gcc -c 只执行到预编译。
+gcc file.c生成a.out
+gcc file.c -o file 生成file
+编译多个文件
+gcc -c message.c生成message.o 的文件，其包含连接到一个较大程序的已编译目标代码
+gcc -c main.c生成main.c的文件
+gcc -o goodbye message.o main.o生成可执行文件goodbye
+直接用这个命令gcc -o goodbye1 message.c main.c
 
-makefileһ��ṹ
+makefile一般结构
 target...:dependency...
   command...
-1��target��һ��Ŀ���ļ���������object��Ҳ����ִ���ļ����������Ǳ�ǩlabel
-2��dependency��������Ҫ����Ŀ���ļ�target��������Щ�ļ�
-3��command�������Ŀ��ʱ����Ҫ���е�shell���ÿ�е���������Ҫtab������ʹ�ö���ո�
-��������ļ�����һ����Ŀ���ļ�Ҫ�µĻ���shell���������������ͻᱻִ��
+1、target，一个目标文件，可以是object，也可是执行文件。还可以是标签label
+2、dependency，依赖，要生成目标文件target所依赖哪些文件
+3、command命令，创建目标时，需要运行的shell命令（每行的缩进必须要tab而不能使用多个空格）
+如果依赖文件中有一个比目标文件要新的话，shell命令所定义的命令就会被执行
 #this makefile just is aexample.
 test.o:test.c test.h
 	gcc -c test.c
@@ -68,6 +68,81 @@ test.o:test.c test.h
 	gcc -c test.c
 clean:
 	rm -f *.o
+视图模式下，复制整段代码，在正常模式下输入v进行视图模式，选中要复制的内容，y进行复制内容，p进行黏贴内容。
+Ctrl+v进入视图块模式，可以复制整块数据
 
+一般在主目录下有一个.vimrc配置vim文件，是隐藏文件，如果没有，建立个文件，便于颜色，c，c++代码编辑，内容如下：
+set nu
+syntax on
+set autoindent
+set smartindent
+set cindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set showmatch
+set ruler
+set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+set nocompatible
+set nu
+filetype on
+set history=1000
+set background=dark
+syntax on
+set autoindent
+set smartindent
+set tabstop=4
+set showmatch
+set guioptions-=T
+set vb t_vb=
+set ruler
+set nohls
+set incsearch
+if &term=="xterm"
+    set t_Co=8
+    set t_Sb=^[[4%dm
+    set t_Sf=^[[3%dm　
+endif
 
+解释如下：
+修改vimrc如下：
 
+1、配置文件的位置
+
+　　在目录 /etc/ 下面，有个名为vimrc的文件，这是系统中公共的vim配置文件，对所有用户都有效。而在每个用户的主目录下，都可以自己建立私有的配置文件，命名为：“.vimrc”。例如，/root目录下，通常已经存在一个.vimrc文件。
+
+　　2、设置语法高亮显示
+　　1) 打开vimrc，添加以下语句来使得语法高亮显示：
+　　syntax on
+
+　　2) 如果此时语法还是没有高亮显示，那么在/etc目录下的profile文件中添加以下语句：
+　　export TERM=xterm-color
+
+　　3、设置Windows风格的C/C++自动缩进（添加以下set语句到vimrc中）
+
+　　1）设置（软）制表符宽度为4：
+　　set tabstop=4
+　　set softtabstop=4
+
+　　2）设置缩进的空格数为4
+　　set shiftwidth=4
+
+　　3）设置自动缩进：即每行的缩进值与上一行相等；使用 noautoindent 取消设置：
+　　set autoindent
+
+　　4）设置使用 C/C++ 语言的自动缩进方式：
+　　set cindent
+
+　　5）设置C/C++语言的具体缩进方式（以我的windows风格为例）：
+　　set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+
+　　6）如果想在左侧显示文本的行号，可以用以下语句：
+　　set nu
+
+　　7）最后，如果没有下列语句，就加上吧：
+　　if &term=="xterm"
+　　set t_Co=8
+　　 set t_Sb=^[[4%dm
+　　set t_Sf=^[[3%dm
+　　endif
