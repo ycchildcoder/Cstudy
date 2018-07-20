@@ -23,6 +23,20 @@ su 改变用户权限
 who 查看当前在线用户
 ps 查看进程  ps-x查看自己的
 kill终止后台进程 kill -9 
+top 查看进行运行
+ps -T -p id: 查看进程里面线程运行状态
+top -H -p id： 查看进程里面线程
+awk ： 进行匹配
+awk -F , '{print }' 以，分割，进行匹配数据
+grep 查询，匹配
+head ， tail ：前面几行和后面几行
+tail -f debug.log ： 时刻更新debug.log 中内容
+nc -l 4545 < test : 开启端口4545 发送test中内容
+nc ip port > test ： 接收端，接收ip port发来的数据
+tcpdump  : 抓包， 进行分析
+tcpdump udp port 9000 -i eth1 -s 0 -c 100000 -w test.cap  ： 抓取udp port 9000， eth1网卡上的数据，-c 抓取10万个包， -w 保存到文件
+
+
 
 退出vim
 :q! 离开vim，放弃刚才编辑的内容
@@ -35,6 +49,8 @@ x：删除光标后的字符
 X：删除光标前的字符
 dd：删除当前行
 u：恢复刚才被修改的文本
+ctrl+r: 反撤销
+
 /name 查找光标后名为name的字符串
 s: 删除所在的字符，同时进入输入模式
 yy复制当前光标所在的行
